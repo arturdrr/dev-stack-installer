@@ -20,14 +20,22 @@ chmod +x install.sh
 ```
 
 ## 🛠️ What Gets Installed
-- **Modern CLI Tools**: bat, exa, fzf, ripgrep, dust, duf
-- **Multiple Editors**: VS Code, Vim, nano
+- **Modern CLI Tools**: bat, eza, fzf, ripgrep, dust, duf
+- **Editors**: VS Code, Vim, nano
 - **Development Environments**: Node.js, Python, Git
+- **Containerization**: Docker and Docker Compose for web development.
 
 ## 📊 Installation Options
+
+The installation is modular. You can install everything or pick the parts you need.
+
+### Core Modules
 - `./install.sh --cli-tools` - CLI utilities only
-- `./install.sh --dev-env` - Development environments
+- `./install.sh --dev-env` - Development environments (Node, Python)
 - `./install.sh --editors` - Text editors only
+
+### Installation Profiles
+- `./install.sh --profile-web-dev` - Installs tools for web development (Docker, Docker Compose)
 
 ## 🤝 Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.

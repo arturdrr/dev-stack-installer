@@ -34,12 +34,17 @@ Options:
     --dev-env          Install only development environments (Node, Python)
     --editors          Install only editors (VS Code)
     --config-only      Apply configurations only (aliases, shell configs)
+
+Profiles:
+    --profile-web-dev  Install tools for Web Development (Docker, Docker Compose)
+
+Other:
     --dry-run          Show what would be done without executing
     -h, --help         Show this help message
 
 Example:
     $0 --all           # Install everything
-    $0 --cli-tools --dev-env # Install CLI tools and Dev environments
+    $0 --cli-tools --profile-web-dev # Install CLI tools and Web Dev profile
 
 EOF
 }
@@ -83,11 +88,15 @@ main() {
                 source "${SCRIPTS_DIR}/configurations.sh"
                 shift
                 ;;
+            --profile-web-dev)
+                source "${SCRIPTS_DIR}/profile-web-dev.sh"
+                shift
+                ;;
             --dry-run)
                 log_warning "DRY RUN: Showing what would be done."
                 export DRY_RUN=true
-                # Re-run with --all in dry-run mode
-                $0 --all
+                # Re-run with all options to show a full dry run
+                $0 --all --profile-web-dev
                 exit 0
                 ;;
             -h|--help)
