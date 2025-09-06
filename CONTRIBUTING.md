@@ -1,22 +1,32 @@
 # Contributing to Dev Stack Installer
 
-First off, thank you for considering contributing! It's people like you that make open source such a great community.
+## 🌟 Welcome
+Thank you for your interest in contributing! Every contribution matters.
 
-## How Can I Contribute?
+## 🚀 Getting Started
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/amazing-feature`
+3. Make changes and test thoroughly
+4. Commit: `git commit -m 'feat: add amazing feature'`
+5. Push: `git push origin feature/amazing-feature`
+6. Open a Pull Request
 
-### Reporting Bugs
-- Ensure the bug was not already reported by searching on GitHub under [Issues](https://github.com/arturdrr/dev-stack-installer/issues).
-- If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/arturdrr/dev-stack-installer/issues/new). Be sure to include a **title and clear description**, as much relevant information as possible, and a **code sample** or an **executable test case** demonstrating the expected behavior that is not occurring.
+## 💻 Development Setup
+```bash
+git clone https://github.com/arturdrr/dev-stack-installer.git
+cd dev-stack-installer
+./tests/verify-tools.sh # Run tests
+```
 
-### Suggesting Enhancements
-- Open a new issue and provide a clear description of the enhancement you are suggesting.
-- Explain why this enhancement would be useful to other users.
+## 📝 Commit Convention
+- `feat:` - New features
+- `fix:` - Bug fixes
+- `docs:` - Documentation
+- `test:` - Tests
+- `refactor:` - Code refactoring
 
-### Pull Requests
-1. Fork the repo and create your branch from `main`.
-2. If you've added code that should be tested, add tests.
-3. Ensure the test suite passes.
-4. Make sure your code lints.
-5. Issue that pull request!
+## 🐛 Bug Reports
+Use the [bug report template](.github/ISSUE_TEMPLATE/bug_report.md)
 
-We appreciate your contributions!
+## ✨ Feature Requests  
+Use the [feature request template](.github/ISSUE_TEMPLATE/feature_request.md)

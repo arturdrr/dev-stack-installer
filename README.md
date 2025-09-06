@@ -1,88 +1,36 @@
 # 🚀 Dev Stack Installer
 
-**Complete Developer Environment Setup for Debian/Ubuntu and derivatives.**
+![GitHub release](https://img.shields.io/github/v/release/arturdrr/dev-stack-installer)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Build Status](https://img.shields.io/github/actions/workflow/status/arturdrr/dev-stack-installer/test.yml)
+![Platform](https://img.shields.io/badge/Platform-Debian%2FUbuntu-orange)
 
-This repository contains a modular and customizable script to automate the installation of essential development tools, modern CLI utilities, and their configurations.
+**Complete Developer Environment Setup for Debian/Ubuntu**
 
-![demo](https://user-images.githubusercontent.com/12345/12345678-abcdef.gif) <!-- Placeholder for a future demo gif -->
+One-command installation of all essential development tools and modern CLI utilities.
 
 ## ⚡ Quick Start
-
-Get up and running with a single command. This will clone the repository and start the interactive installation.
 
 ```bash
 git clone https://github.com/arturdrr/dev-stack-installer.git
 cd dev-stack-installer
 chmod +x install.sh
-./install.sh
+./install.sh --dry-run # Preview installation
+./install.sh # Install everything
 ```
 
 ## 🛠️ What Gets Installed
-
-This script can install a wide range of tools, organized into modules.
-
-### Modern CLI Tools
-- **`eza`** - A modern replacement for `ls`.
-- **`bat`** - A `cat` clone with syntax highlighting and Git integration.
-- **`fzf`** - A general-purpose command-line fuzzy finder.
-- **`ripgrep` (`rg`)** - A line-oriented search tool that recursively searches your current directory for a regex pattern.
-- **`fd`** - A simple, fast and user-friendly alternative to `find`.
-- **`zoxide`** - A smarter `cd` command that learns your habits.
-- **`starship`** - The minimal, blazing-fast, and infinitely customizable prompt for any shell!
-
-➡️ **[View the complete list of tools in `docs/TOOLS-LIST.md`](docs/TOOLS-LIST.md)**
-
-### Development Environments
-- **Node.js** - Installed via NodeSource to ensure the latest versions.
-- **Python** - Using the system's Python 3 and `pip`, with `venv` for environment management.
-- **Go** - (Optional) Latest stable version.
-
-### Editors & IDEs
-- **VS Code** - (Optional) The most popular code editor.
-- **Vim/Nano** - Essential terminal editors, usually pre-installed.
+- **Modern CLI Tools**: bat, exa, fzf, ripgrep, dust, duf
+- **Multiple Editors**: VS Code, Vim, nano
+- **Development Environments**: Node.js, Python, Git
 
 ## 📊 Installation Options
-
-The installer is modular. You can choose to install everything or only specific parts.
-
-```bash
-# Run the full installation (default)
-./install.sh
-
-# Install only the modern CLI tools
-./install.sh --cli-tools
-
-# Install only development environments (Node, Python)
-./install.sh --dev-env
-
-# Apply configurations (aliases, etc.) without installing tools
-./install.sh --config-only
-
-# See what would be installed without actually installing anything
-./install.sh --dry-run
-```
-
-## 🎯 Compatibility
-
-This script is tested and confirmed to work on:
-
-- ✅ Debian 11+ (Bullseye)
-- ✅ Ubuntu 20.04+ (Focal)
-- ✅ Pop!_OS 20.04+
-- ✅ Other Debian/Ubuntu-based distributions
-
-## 📖 Documentation
-
-- **[Complete Tools List](docs/TOOLS-LIST.md)**: A full list of every tool the script can install.
-- **[Customization Guide](docs/CUSTOMIZATION.md)**: Learn how to add or remove tools from the installation.
-- **[Troubleshooting Guide](docs/TROUBLESHOOTING.md)**: Solutions to common problems.
+- `./install.sh --cli-tools` - CLI utilities only
+- `./install.sh --dev-env` - Development environments
+- `./install.sh --editors` - Text editors only
 
 ## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/arturdrr/dev-stack-installer/issues).
-
-Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE) file.
