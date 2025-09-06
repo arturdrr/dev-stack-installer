@@ -25,6 +25,14 @@ One-command installation of all essential development tools and modern CLI utili
 
 ---
 
+### 📊 What Makes This Different
+- **Zero Configuration**: Works out of the box
+- **Anti-Redundancy**: Smart detection prevents conflicts  
+- **Community Driven**: Based on developer feedback
+- **Future Proof**: Regular updates with latest tools
+
+---
+
 ## 🚀 Quick Start
 
 ```bash
@@ -131,6 +139,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 - [Troubleshooting](docs/TROUBLESHOOTING.md) - Common issues and solutions
 - [Customization](docs/CUSTOMIZATION.md) - How to customize your setup
 - [FAQ](docs/FAQ.md) - Frequently asked questions
+- [Useful Links](docs/USEFUL-LINKS.md) - Curated list of helpful resources
 
 ---
 
