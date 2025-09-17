@@ -1,0 +1,38 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Dev Stack Monitoring",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Latency Gemini CLI",
+        "targets": [
+          {
+            "expr": "gemini_cli_latency_seconds",
+            "legendFormat": "Latency"
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "Execuções Kilo Code",
+        "targets": [
+          {
+            "expr": "kilo_code_run_total",
+            "legendFormat": "Runs"
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Status Pipelines GitHub Actions",
+        "targets": [
+          {
+            "expr": "github_actions_job_status",
+            "legendFormat": "{{ job }}"
+          }
+        ]
+      }
+    ]
+  }
+}

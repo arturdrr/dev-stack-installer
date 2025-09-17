@@ -1,0 +1,20 @@
+groups:
+  - name: devstack-alerts
+    rules:
+      - alert: GeminiCLILatencyHigh
+        expr: gemini_cli_latency_seconds > 1.0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Latência alta no Gemini CLI"
+          description: "Latência está acima de 1 segundo por mais de 2 minutos."
+
+      - alert: KiloCodeRunsLow
+        expr: rate(kilo_code_run_total[5m]) < 1
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Baixo número de execuções de Kilo Code"
+          description: "Número de execuções do Kilo Code está muito baixo nos últimos 10 minutos."

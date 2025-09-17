@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'kilo_code'
+    static_configs:
+      - targets: ['localhost:8000']  # Ajuste para endpoint de métricas do Kilo Code
+
+  - job_name: 'gemini_cli'
+    static_configs:
+      - targets: ['localhost:8001']  # Endpoint de métricas do Gemini CLI
+
+  - job_name: 'github_actions_exporter'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['github-actions-exporter:9100']  # Exporter para GitHub Actions
