@@ -1,34 +1,77 @@
-# Dev Stack Ultra Completa
+# 💻 Dev Stack Ultra Completa
 
-Este repositório contém scripts e configurações para configurar uma Dev Stack completa, otimizada para diferentes ambientes: local e VPS.
+Scripts e configurações para configurar uma Dev Stack completa e otimizada para ambientes locais e servidores VPS Debian/Ubuntu.
 
-## Estrutura do Repositório
+---
 
-- **`local-install/`**: Contém scripts e configurações para a instalação da dev stack em um ambiente de desenvolvimento local (sua máquina).
-- **`vps-install/`**: Contém scripts e configurações para a instalação da dev stack completa em um servidor VPS (Virtual Private Server).
-- **`docs/`**: Documentação adicional sobre a arquitetura, melhores práticas e outros tópicos relevantes.
+## 📁 Estrutura do Repositório
 
-## Como Usar
+- **local-install/**  
+  Scripts e configurações para instalação no ambiente local (sua máquina).
 
-Para uma instalação guiada e inteligente, utilize o script Python interativo na raiz deste repositório. Para instalações não interativas ou específicas de ambiente, consulte os scripts em `local-install/` ou `vps-install/`.
+- **vps-install/**  
+  Scripts e configurações para instalação completa em servidores VPS.
 
-## Como Usar o Instalador Python Interativo
+- **docs/**  
+  Documentação adicional sobre arquitetura, melhores práticas e tópicos relacionados.
 
-1.  **Execute o instalador**:
-    ```bash
-    python3 installer.py
-    ```
-2.  **Siga o menu**: O instalador apresentará um menu onde você pode escolher quais etapas deseja executar ou iniciar a instalação completa.
-3.  **Retomar instalação**: Em caso de interrupção ou erro, você pode executar o script novamente. Ele retomará do último ponto de verificação salvo.
+---
 
-Logs detalhados da instalação são gravados em `devstack_install.log` e o checkpoint em `install_checkpoint.txt`.
+## ⚙️ Como Usar
 
-## Ordem de Instalação Inteligente
+### Instalação guiada e inteligente (interativa)
 
-A instalação segue uma ordem inteligente para garantir que todas as dependências e ferramentas essenciais estejam disponíveis antes das ferramentas que delas dependem, evitando falhas e garantindo um ambiente funcional desde o início.
+1. Clone o repositório:
 
-Cada etapa verifica se a ferramenta ou dependência já está instalada para evitar reinstalação desnecessária. Os scripts são criados para falhar caso dependam de uma etapa não concluída, garantindo execução sequencial correta. Há também a possibilidade de retomar a instalação em caso de erro, identificando o último passo completado, e configurações adaptativas para diferentes ambientes (local ou VPS), ativando apenas componentes relevantes.
+```text
+git clone https://github.com/arturdrr/dev-stack-installer.git
+cd dev-stack-installer
+```
 
-## Licença
+2. Execute o instalador Python:
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
+```text
+python3 installer.py
+```
+
+3. Siga o menu interativo para escolher etapas ou iniciar a instalação completa.
+
+---
+
+### Instalação não interativa
+
+- Para instalação local específica, confira os scripts em `local-install/`.
+- Para instalação em VPS, utilize os scripts em `vps-install/`.
+
+---
+
+## 🔄 Ordem de Instalação Inteligente
+
+- A instalação é feita em ordem lógica, garantindo dependências e ferramentas essenciais instaladas antes das dependentes.
+- Cada etapa verifica se o componente já está instalado, evitando reinstalação desnecessária.
+- Scripts falham de forma segura caso dependam de etapas não concluídas.
+- Possibilidade de retomar instalação do último ponto salvo, mesmo após interrupções.
+- Configurações adaptam-se conforme ambiente (local ou VPS), ativando os componentes relevantes.
+
+---
+
+## 📜 Logs e Checkpoints
+
+- Logs detalhados são gravados em `devstack_install.log`.
+- Ponto de checkpoint para retomada é armazenado em `install_checkpoint.txt`.
+
+---
+
+## 🛡️ Licença
+
+Este projeto está licenciado sob a [Licença MIT](https://github.com/arturdrr/dev-stack-installer/blob/master/LICENSE).
+
+---
+
+## 🚀 Comece Já!
+
+Configure seu ambiente de desenvolvimento completo e otimizado, seja localmente ou em servidores VPS, com máxima eficiência e facilidade!
+
+---
+
+Se precisar de suporte ou quiser sugerir melhorias, fique à vontade para abrir issues ou pull requests. Boa codificação! 🎉👨‍💻👩‍💻
