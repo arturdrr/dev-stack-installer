@@ -9,61 +9,113 @@ Scripts e configurações para configurar uma Dev Stack completa e otimizada par
 
 ---
 
-## 📁 Estrutura do Repositório
+## 💡 Visão Geral
 
-- **local-install/**  
-  Scripts e configurações para instalação no ambiente local (sua máquina).
+O **Dev Stack Ultra Completa** é um conjunto robusto de scripts e configurações projetado para automatizar a configuração de ambientes de desenvolvimento completos e otimizados. Seja para sua máquina local ou para servidores VPS baseados em Debian/Ubuntu, este projeto garante uma instalação eficiente, inteligente e personalizável, permitindo que você comece a codificar rapidamente.
 
-- **vps-install/**  
-  Scripts e configurações para instalação completa em servidores VPS.
+---
 
-- **docs/**  
-  Documentação adicional sobre arquitetura, melhores práticas e tópicos relacionados.
+## ✨ Recursos Principais
+
+-   **Instalação Guiada e Inteligente**: Um instalador Python interativo que guia você através do processo, oferecendo opções claras para cada etapa.
+-   **Modos de Instalação Flexíveis**: Suporte para instalação local, em VPS, ou ambos sequencialmente, com perfis "Básico" e "Pesado" para atender às suas necessidades.
+-   **Ordem de Instalação Otimizada**: Garante que as dependências e ferramentas essenciais sejam instaladas na ordem correta, minimizando erros.
+-   **Resiliência e Retomada**: Capacidade de retomar a instalação do último ponto salvo, mesmo após interrupções, graças a um sistema de logs e checkpoints.
+-   **Configurações Adaptáveis**: As configurações se ajustam automaticamente ao ambiente (local ou VPS), ativando apenas os componentes relevantes.
+-   **Logs Detalhados**: Todos os passos da instalação são registrados em logs para fácil depuração e auditoria.
+-   **Personalização Fácil**: Permite adaptar a instalação às suas preferências e necessidades específicas.
+
+---
+
+## 🛠️ Pré-requisitos
+
+-   **Sistema Operacional**: Debian/Ubuntu (ou distribuições baseadas).
+-   **Python**: Python 3.8 ou superior.
+-   **Acesso Sudo**: Necessário para a instalação de pacotes no sistema local.
+-   **Acesso SSH**: Para instalações em VPS, é necessário acesso SSH válido com permissões adequadas.
 
 ---
 
 ## ⚙️ Como Usar
 
-### Instalação guiada e inteligente (interativa)
+### Instalação Guiada e Inteligente (Interativa)
 
-1. Clone o repositório:
+Esta é a forma recomendada para a maioria dos usuários. O instalador Python irá guiá-lo através das opções de instalação.
 
-```text
-git clone https://github.com/arturdrr/dev-stack-installer.git
-cd dev-stack-installer
+1.  **Clone o repositório**:
+    ```bash
+    git clone https://github.com/arturdrr/dev-stack-installer.git
+    cd dev-stack-installer
+    ```
+
+2.  **Execute o instalador Python**:
+    ```bash
+    python3 installer.py
+    ```
+
+3.  **Siga o menu interativo**: Escolha entre instalar localmente, em uma VPS, ou ambos, e selecione o perfil de instalação (Básico ou Pesado) conforme suas necessidades.
+
+### Instalação Não Interativa (Automatizada)
+
+Para automação ou integração em scripts, você pode usar o modo não interativo, passando os parâmetros diretamente na linha de comando.
+
+```bash
+python3 installer.py --mode <local|vps|both> --profile <1|2> [--user <SSH_USER>] [--host <SSH_HOST>]
 ```
 
-2. Execute o instalador Python:
+-   `--mode` (obrigatório): Define onde instalar (`local`, `vps`, ou `both`).
+-   `--profile` (obrigatório): `1` para perfil Básico, `2` para perfil Pesado.
+-   `--user` e `--host` (opcionais): Necessários para instalações em VPS, especificam o usuário e o endereço do servidor.
 
-```text
-python3 installer.py
-```
+**Exemplos**:
 
-3. Siga o menu interativo para escolher etapas ou iniciar a instalação completa.
-
----
-
-### Instalação não interativa
-
-- Para instalação local específica, confira os scripts em `local-install/`.
-- Para instalação em VPS, utilize os scripts em `vps-install/`.
+-   Instalar localmente com perfil básico:
+    ```bash
+    python3 installer.py --mode local --profile 1
+    ```
+-   Instalar em VPS com perfil pesado:
+    ```bash
+    python3 installer.py --mode vps --profile 2 --user seu_usuario --host seu_vps.com
+    ```
 
 ---
 
 ## 🔄 Ordem de Instalação Inteligente
 
-- A instalação é feita em ordem lógica, garantindo dependências e ferramentas essenciais instaladas antes das dependentes.
-- Cada etapa verifica se o componente já está instalado, evitando reinstalação desnecessária.
-- Scripts falham de forma segura caso dependam de etapas não concluídas.
-- Possibilidade de retomar instalação do último ponto salvo, mesmo após interrupções.
-- Configurações adaptam-se conforme ambiente (local ou VPS), ativando os componentes relevantes.
+O instalador segue uma sequência lógica para garantir que todas as ferramentas e dependências sejam configuradas corretamente.
+
+-   **Verificação de Dependências**: Ferramentas essenciais são instaladas antes de seus dependentes.
+-   **Idempotência**: Cada etapa verifica se o componente já está presente, evitando reinstalações desnecessárias e garantindo que o script possa ser executado múltiplas vezes sem efeitos colaterais indesejados.
+-   **Tratamento de Falhas**: Scripts são projetados para falhar de forma segura, com mensagens claras caso uma etapa não possa ser concluída.
+-   **Retomada Automática**: Em caso de interrupção, o sistema de checkpoints permite que a instalação seja retomada do último ponto de sucesso.
+-   **Adaptação de Ambiente**: As configurações são dinamicamente ajustadas para otimizar o desempenho e a compatibilidade, seja em um ambiente local de desenvolvimento ou em um servidor de produção.
 
 ---
 
 ## 📜 Logs e Checkpoints
 
-- Logs detalhados são gravados em `devstack_install.log`.
-- Ponto de checkpoint para retomada é armazenado em `install_checkpoint.txt`.
+Para garantir transparência e facilitar a depuração:
+
+-   **Logs Detalhados**: Todas as ações e resultados da instalação são registrados em `devstack_install.log`, fornecendo um histórico completo do processo.
+-   **Ponto de Checkpoint**: Um arquivo `install_checkpoint.txt` é mantido para registrar o progresso, permitindo que a instalação seja retomada de onde parou em caso de interrupções.
+
+---
+
+## 🎨 Personalização
+
+O instalador é projetado para ser flexível. Você pode:
+
+-   **Editar Perfis**: Modificar os scripts dentro de `local-install/` e `vps-install/` para adicionar ou remover pacotes e configurações.
+-   **Adicionar Ferramentas**: Estender os scripts para incluir a instalação de suas ferramentas e frameworks favoritos.
+
+---
+
+## ❓ Solução de Problemas (Troubleshooting)
+
+-   **"Comando não encontrado"**: Verifique se o Python 3 está instalado e no seu PATH.
+-   **Erros de Permissão**: Certifique-se de que você tem permissões `sudo` para instalar pacotes.
+-   **Problemas de Conexão SSH**: Verifique suas credenciais SSH e a conectividade com a VPS.
+-   **Logs**: Consulte `devstack_install.log` para mensagens de erro detalhadas.
 
 ---
 
