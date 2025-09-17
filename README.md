@@ -1,5 +1,10 @@
 # 💻 Dev Stack Ultra Completa
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://python.org/)
+<!-- Add GitHub Actions Workflow Status Badge here if applicable -->
+<!-- Example: ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/arturdrr/dev-stack-installer/main?label=build) -->
+
 Scripts e configurações para configurar uma Dev Stack completa e otimizada para ambientes locais e servidores VPS Debian/Ubuntu.
 
 ---
